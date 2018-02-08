@@ -18,21 +18,17 @@ export default class HomeScreen extends React.Component {
           <Body>
             <Title>HomeScreen</Title>
           </Body>
-          <Right />
+          
         </Header>
         <Content padder>
           <Card>
             <CardItem>
               <Body>
-                <Text>Chat App to talk some awesome people!</Text>
+                <Text style={{ fontSize: 30}}>Trip to sadsad!</Text>
               </Body>
             </CardItem>
           </Card>
-          <Button full rounded dark
-            style={{ marginTop: 10 }}
-            onPress={() => this.props.navigation.navigate("Chat")}>
-            <Text>Chat With People</Text>
-          </Button>
+          
           <Button full rounded primary
             style={{ marginTop: 10 }}
             onPress={() => this.props.navigation.navigate("Profile")}>

@@ -1,6 +1,8 @@
 import React from "react";
 import { AppRegistry, Image, StatusBar } from "react-native";
 import { Container, Content, Text, List, ListItem } from "native-base";
+
+//const drawerCoverImg = require("../../assets/images/drawer-cover.png ");
 const routes = ["Home", "Profile"];
 
 export default class SideBar extends React.Component {
@@ -10,7 +12,7 @@ export default class SideBar extends React.Component {
         <Content>
           <Image
             source={{
-              uri: "https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/react-navigation/img/drawer-cover.png"
+              uri: "https://raw.githubusercontent.com/GeekyAnts/NativeBase-KitchenSink/master/assets/drawer-cover.png"
             }}
             style={{
               height: 120,
@@ -18,14 +20,6 @@ export default class SideBar extends React.Component {
               justifyContent: "center",
               alignItems: "center"
             }}/>
-            
-            <Image
-              square
-              style={{ height: 80, width: 70 }}
-              source={{
-                uri: "https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/react-navigation/img/logo.png"
-              }}
-            />
           
           <List
             dataArray={routes}
