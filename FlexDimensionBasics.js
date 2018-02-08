@@ -31,7 +31,7 @@ export default class FlexDimensionBasics extends Component {
       <View style={{padding: 10}}>
         <TextInput
           style={{height: 40}}
-          placeholder="Type here to translate!"
+          placeholder="Type here!"
           onChangeText={(text) => this._setText(text)}
         />
         
