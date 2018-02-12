@@ -6,3 +6,6 @@ cd android
 ./gradlew assembleDebug
 
 After this you should be able to find two APK files in the android/app/build/outputs/apk folder:
+
+
+adb shell input keyevent KEYCODE_MENU

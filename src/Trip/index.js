@@ -1,9 +1,13 @@
 import React from "react";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 import { AppRegistry, Alert } from "react-native";
 import { Container, Header, Input, Left, Body, Title, Card, CardItem, 
     Content, Right, Icon, Button, Text } from "native-base";
 import { StackNavigator } from "react-navigation";
 //import { View, Text } from "react-native";
+import { loadBJs } from '../actions/break_journeys';
 
 class Trip extends React.Component {
   constructor(props) {
@@ -29,6 +33,8 @@ class Trip extends React.Component {
         (error) => this.setState({ error: error.message }),
         { enableHighAccuracy: false, timeout: 20000, maximumAge: 3000 },
     );
+
+    this.props.dispatch(loadBJs());
   }
 
   render() {
@@ -55,4 +61,10 @@ class Trip extends React.Component {
   }
 }
 
-export default Trip;
+const mapStatetoProps = state => {
+  return {
+    breakJourneyData: state.breakJourney.breakJourneyData
+  }
+}
+
+export default connect()(Trip);

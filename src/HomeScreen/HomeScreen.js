@@ -2,6 +2,7 @@ import React from "react";
 import { StatusBar } from "react-native";
 import { Container, Header, Title, Left, Icon, Right, Button, Body, Content,Text, Card, CardItem } from "native-base";
 
+
 export default class HomeScreen extends React.Component {
   render() {
     return (
@@ -31,8 +32,8 @@ export default class HomeScreen extends React.Component {
           
           <Button full rounded primary
             style={{ marginTop: 10 }}
-            onPress={() => this.props.navigation.navigate("Profile")}>
-            <Text>Goto Profiles</Text>
+            onPress={() => this.props.navigation.navigate("Trip")}>
+            <Text>Goto trip details</Text>
           </Button>
         </Content>
       </Container>
