@@ -12,15 +12,3 @@ export function loadBJs() {
         });
     }
 }
-
-
-export function loadCandidateAnswers() {
-    return (dispatch) => {
-      return fetch_candidate_answers()
-        .then(payload => { 
-          dispatch(loadCandidateAnswersSuccess(payload));
-          dispatch(loadQuestionState(payload));
-        });
-    }
-  }
-  
