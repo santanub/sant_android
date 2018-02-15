@@ -6,7 +6,7 @@ import {
     breakJourneyData: []
   };
 
-const breakJourney = (state = [{name: "chnrpk"}], action) => {
+const breakJourney = (state = [], action) => {
     switch (action.type) {
       case FETCH_BREAK_JOURNEYS:
         return action.payload.data;
