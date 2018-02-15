@@ -8,6 +8,7 @@ import { Container, Header, Input, Left, Body, Title, Card, CardItem,
 import { StackNavigator } from "react-navigation";
 //import { View, Text } from "react-native";
 import { loadBJs } from '../actions/break_journeys';
+import { BreakJourney } from './BreakJourney.js';
 
 class Trip extends React.Component {
   constructor(props) {
@@ -69,8 +70,11 @@ class Trip extends React.Component {
               </Text>
           <Text>longitude: {this.state.longitude}</Text>
           <Text>error: {this.state.error}</Text>
-          <Text> Coming from stores lat{ this.props.breakJourneyData[0].lat}</Text>
-          <Text>Coming from stores long { this.props.breakJourneyData[0].long}</Text>
+        
+      <BreakJourney/ >
+
+      
+          
         </Content>
       </Container>
     );
@@ -79,7 +83,7 @@ class Trip extends React.Component {
 
 const mapStatetoProps = state => {
   return {
-    breakJourneyData: state.breakJourney.breakJourneyData
+    breakJourneyData: state.breakJourney
   }
 }
 

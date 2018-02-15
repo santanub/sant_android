@@ -3,13 +3,13 @@ import {
   } from '../constants/actionTypes';
   
   const initialState = {
-      breakJourneyData: [{lat: 22.533, long: 50.456, time: "07:25"}]
+    breakJourneyData: []
   };
 
-  const breakJourney = (state = initialState, action) => {
+const breakJourney = (state = [{name: "chnrpk"}], action) => {
     switch (action.type) {
       case FETCH_BREAK_JOURNEYS:
-        return state;
+        return action.payload.data;
       default:
         return state;
     }

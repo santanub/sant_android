@@ -5,7 +5,7 @@ function getDefaultOptions() {
       method: 'GET',
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        "X-AUTH-TOKEN": ''
+        
       }
     };
   }
@@ -31,10 +31,8 @@ function getDefaultOptions() {
     options.headers = options.headers ? options.headers : defaultOptions.headers;
   
     if(options.body) {
-      //options.body = buildParam(options.body);
       options.headers['Content-Type'] = 'application/json; charset=UTF-8';
       options.body = buildParam(options.body);
-
     }
   
     //options.credentials = 'same-origin';
@@ -43,7 +41,6 @@ function getDefaultOptions() {
     const API_HOST = API; // TODO: get url from ENV Variable, if exists
     url = `${API_HOST}${uri}`;
   
-    console.log(url)
-    fetch(`${url}`, options).then(data => data.json()).catch(error => console.log(error.message()));
+    return fetch(`${url}`).then(data => data.json()).catch(error => console.log(error));
   }
   
