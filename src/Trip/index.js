@@ -16,14 +16,20 @@ class Trip extends React.Component {
     super(props);
 
     this.state = {
-        latitude: null,
-        longitude: null,
+        latitude: 22.6089739,
+        longitude: 88.4419673,
         error: null,
+      timer: null
     };
+  }
+
+  componentWillMount() {
+
   }
 
   componentDidMount() {
     //Alert.alert("This is the page where location list will be shown");
+    let timer = setInterval(
     navigator.geolocation.getCurrentPosition(
         (position) => {
           this.setState({
@@ -32,11 +38,12 @@ class Trip extends React.Component {
             error: null,
           });
         },
-        (error) => this.setState({ error: error.message }),
+      (error) => this.setState({ error: error.message, latitude: 22.6975387, longitude: 88.3838953 }),
         { enableHighAccuracy: false, timeout: 20000, maximumAge: 3000 },
-    );
+    ), 5000);
 
-    this.props.dispatch(loadBJs());
+    this.setState({timer});
+        this.props.dispatch(loadBJs());
   }
 
   
