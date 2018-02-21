@@ -2,9 +2,9 @@ import React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { AppRegistry, Alert, StyleSheet, View } from "react-native";
+import { AppRegistry, Alert, StyleSheet, View, ScrollView } from "react-native";
 import { Container, Header, Input, Left, Body, Title, Card, CardItem, 
-    Content, Right, Icon, Button, Text } from "native-base";
+         Content, Right, Icon, Button, Text, Footer, FooterTab } from "native-base";
 import { StackNavigator } from "react-navigation";
 //import { View, Text } from "react-native";
 import { loadBJs } from '../actions/break_journeys';
@@ -60,13 +60,22 @@ class Trip extends React.Component {
             <ShowDistance lat={this.state.latitude} long={this.state.longitude} />
           </View>
           <View style={styles.stoppages}>
+            <ScrollView>
             { this.props.breakJourneyData.map((bj, index) => 
               <BreakJourney breakJourney={bj.attributes} key={index} />
             )}
+            </ScrollView>
           </View>
-        
+          
         </View>
         </Content>
+        <Footer>
+          <FooterTab style={styles.footer}>
+            <Button badge vertical>
+              <Text style={styles.footerText}>S@ntanu</Text>
+            </Button>
+          </FooterTab>
+        </Footer>
       </Container>
     );
   }
@@ -78,6 +87,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 10,
     marginBottom: 10,
+  },
+  footer: {
+    backgroundColor: 'steelblue',
+  },
+  footerText: {
+    color: 'white',
   },
   distance: {
     flex: 1,
