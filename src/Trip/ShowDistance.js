@@ -50,19 +50,17 @@ import { Container, Header, Input, Left, Body, Title, Card, CardItem,
           
 					if(unit==="K") { dist = dist * 1.609344 }
 					if (unit=="N") { dist = dist * 0.8684 }
-					this.setState({ distance: dist });
+					return dist;
 				} else {
 					return "still calculating";
 				}
       }
 
       render() {
-        this.calculateDistance(this.props.lat, this.props.long, "K");
-        
         return(
             <Card>
-              <Text>The remaining distance is</Text>
-              <Text>{this.state.distance}</Text>
+              <Text>The remaining aerial distance is</Text>
+              <Text>{this.calculateDistance(this.props.lat, this.props.long, "K")}</Text>
             </Card>
         );
 			}
