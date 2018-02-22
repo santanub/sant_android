@@ -1,8 +1,9 @@
 import React from "react";
+import { connect } from 'react-redux';
 import { Container, Header, Input, Left, Body, Title, Card, CardItem, 
          Content, Right, Icon, Button, Text, View } from "native-base";
-import { TouchableHighlight, StyleSheet } from 'react-native';
-//import { loadBJs } from '../actions/break_journeys';
+import { Alert, TouchableHighlight, StyleSheet } from 'react-native';
+import { checkinBJ } from '../actions/break_journeys';
 
 class BreakJourney extends React.Component {
   constructor(props) {
@@ -18,8 +19,7 @@ class BreakJourney extends React.Component {
   }
 
   checkInPlace(id) {
-    alert(1);
-    //this.props.dispatch(loadBJs());
+    this.props.dispatch(checkinBJ(id));
   }
 
   render() {
@@ -36,9 +36,9 @@ class BreakJourney extends React.Component {
               <Text>{this.showTime(this.props.breakJourney)}</Text>
             </View>
             <View style={{flex: 1, backgroundColor: 'skyblue'}}>
-              <TouchableHighlight onPress={this.checkInPlace(this.props.id)} underlayColor="white">
+        <TouchableHighlight onPress={() => this.checkInPlace(this.props.id)} underlayColor="white">
                 <View style={styles.button}>
-                  <Text style={styles.buttonText}>CheckIn {this.props.id}</Text>
+                  <Text style={styles.buttonText}>CheckIn</Text>
                 </View>
               </TouchableHighlight>
             </View>
@@ -61,4 +61,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default BreakJourney;
+export default connect()(BreakJourney);

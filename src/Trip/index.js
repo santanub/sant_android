@@ -40,6 +40,9 @@ class Trip extends React.Component {
     this.props.dispatch(loadBJs());
   }
 
+  checkInBJ() {
+    //this.props.dispatch(loadBJs());
+  }
   
   render() {
     return (
@@ -62,7 +65,7 @@ class Trip extends React.Component {
               <View style={{flex: 1, flexDirection: 'column'}}>
 
             { this.props.breakJourneyData.map((bj, index) => 
-              <BreakJourney breakJourney={bj.attributes} key={index} id={bj.id} />
+                                              <BreakJourney breakJourney={bj.attributes} key={index} id={bj.id} checkIn={this.checkInBJ() } />
             )}
       </View>
             </ScrollView>

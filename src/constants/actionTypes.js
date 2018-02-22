@@ -1,1 +1,3 @@
 export const FETCH_BREAK_JOURNEYS = 'FETCH_BREAK_JOURNEYS';
+export const CHECKIN = 'CHECKIN';
+

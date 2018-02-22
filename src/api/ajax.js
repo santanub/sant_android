@@ -41,6 +41,6 @@ function getDefaultOptions() {
     const API_HOST = API; // TODO: get url from ENV Variable, if exists
     url = `${API_HOST}${uri}`;
   
-    return fetch(`${url}`).then(data => data.json()).catch(error => console.log(error));
+    return fetch(`${url}`, options).then(data => data.json()).catch(error => console.log(error));
   }
   

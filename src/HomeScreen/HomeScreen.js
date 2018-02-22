@@ -25,7 +25,7 @@ export default class HomeScreen extends React.Component {
           <Card>
             <CardItem>
               <Body>
-                <Text style={{ fontSize: 30}}>Trip to sadsad!</Text>
+                <Text style={{ fontSize: 30}}>Trip to Mandarmani!</Text>
               </Body>
             </CardItem>
           </Card>
