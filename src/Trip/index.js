@@ -24,8 +24,6 @@ class Trip extends React.Component {
   }
 
   componentDidMount() {
-    //Alert.alert("This is the page where location list will be shown");
-    
     navigator.geolocation.getCurrentPosition(
         (position) => {
           this.setState({
@@ -61,9 +59,12 @@ class Trip extends React.Component {
           </View>
           <View style={styles.stoppages}>
             <ScrollView>
+              <View style={{flex: 1, flexDirection: 'column'}}>
+
             { this.props.breakJourneyData.map((bj, index) => 
-              <BreakJourney breakJourney={bj.attributes} key={index} />
+              <BreakJourney breakJourney={bj.attributes} key={index} id={bj.id} />
             )}
+      </View>
             </ScrollView>
           </View>
           
